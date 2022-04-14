@@ -12,8 +12,12 @@ The best option over the years of 2017 and 2018 was 'ENPH'. In 2017 they were ab
 ![2017](/Resources/VBA_Challenge_2018.PNG)
 
 In the original code, a list of tickers was established and then iterated over. This iteration went through all the rows in the data to check if the ticker in that row matches the ticker in the list. It ended up going over the same data everytime it checked for a ticker. This slowed down the script substantially. 
+![Original](/Resources/original.PNG)
+
 
 A better solution was to iterate over the rows once. This was done by taking advantage of that fact that the data was alphabetized by stock ticker and also sorted by date. The refactored code checked to see if the current row was the current ticker. If it was then it added the total daily volume. If it was the first row of that ticker then it also took down the price for the starting price. Lastly, if it was the last row it saved the price for the yearly return and increased the (tickerindex) to start the next stock ticker. Having to only go through the data once helped this run much faster.
+![Refactored](/Resources/refactored.PNG)
+
 
 ## Summary
 
